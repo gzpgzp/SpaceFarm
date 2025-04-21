@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Base
+namespace Core.Base
 {
     public class View : MonoBehaviour
     {

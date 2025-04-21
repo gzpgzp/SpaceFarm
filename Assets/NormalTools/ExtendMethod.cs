@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Core
+public class ExtendMethod
 {
-    public class WorldContext
+    public static void ResetGameObject()
     {
-        public int time;
+        
     }
 }
-

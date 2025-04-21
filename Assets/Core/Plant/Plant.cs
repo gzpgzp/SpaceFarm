@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Base;
+using Core.Base;
 using UnityEngine;
 
 namespace Core.Plant
@@ -16,7 +16,7 @@ namespace Core.Plant
 
         public void HarvestPlant(int now)
         {
-        
+            
         }
 
         //todo 如果每个植物都有更新时间会不会太多了，但是如果把成熟这个时间放在外面又不好

@@ -8,7 +8,7 @@ namespace Core.Base
     {
         public Entity entity;
 
-        public void Init(Entity entity)
+        public virtual void Init(Entity entity)
         {
             this.entity = entity;
         }

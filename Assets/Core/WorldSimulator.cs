@@ -7,19 +7,24 @@ namespace Core
 {
     public class WorldSimulator
     {
-        public WorldContext context;
+        public WorldContext worldContext;
         
         public void InitWorld(WorldContext context)
         {
             Debug.Log("Initializing World");
-            this.context = context;
+            this.worldContext = context;
         }
         
         // 每秒更新一次
         public void Update()
         {
-            context.time += 1;
-            Debug.Log(context.time);
+            worldContext.time += 1;
+            Debug.Log(worldContext.time);
+        }
+
+        public int GetNowTime()
+        {
+            return worldContext.time;
         }
     }
 }

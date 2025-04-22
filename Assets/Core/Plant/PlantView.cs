@@ -17,6 +17,11 @@ namespace Core.Plant
         {
             Debug.Log("plant Clicked");
         }
-        
+
+
+        public void UpdateMatureState()
+        {
+            
+        }
     }        
 }

@@ -5,13 +5,15 @@ using UnityEngine;
 
 namespace Core.Plant
 {
-    public class Plant : Entity
+    public class PlantEntity : Entity
     {
         private PlantContext context;
+        private PlantView plantView;
 
         public void StartPlant(int now)
         {
             context.startTime = now;
+            context.isHarvested = false;
         }
 
         public void HarvestPlant(int now)
@@ -25,13 +27,14 @@ namespace Core.Plant
             if (!context.isHarvested && now >= context.harvestTime)
             {
                 context.isHarvested = true;
+                
             }
         }
 
         public override void CreateEntity(int id,View view)
         {
             base.CreateEntity(id, view);
-            
+            plantView = view as PlantView;
         }
     }
 

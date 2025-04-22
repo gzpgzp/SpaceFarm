@@ -17,5 +17,6 @@ namespace Core.Plant
         {
             Debug.Log("plant Clicked");
         }
+        
     }        
 }

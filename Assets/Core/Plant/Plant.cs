@@ -27,6 +27,12 @@ namespace Core.Plant
                 context.isHarvested = true;
             }
         }
+
+        public override void CreateEntity(int id,View view)
+        {
+            base.CreateEntity(id, view);
+            
+        }
     }
 
 }

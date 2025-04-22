@@ -6,10 +6,11 @@ namespace Core.Base
 {
     public class Entity
     {
-        public int id { get; private set; }
-        public View view { get; private set; }
-
-        public void CreateEntity(int id,View view)
+        public int id { get; protected set; }
+        public View view { get; protected  set; }
+        
+        
+        public virtual void CreateEntity(int id,View view)
         {
             this.id = id;
             this.view = view;

@@ -14,7 +14,6 @@ namespace Manager
         [SerializeField] private Camera mainCamera;
         [SerializeField] private Camera uiCamera;
 
-
         public Camera GetCamera(CameraType cameraType)
         {
             switch (cameraType)

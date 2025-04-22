@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using MoreMountains.Tools;
+using NormalTools;
 using ResourceManger;
 using UnityEngine;
 
@@ -22,12 +23,19 @@ namespace Manager
 
         public void Show<T>()
         {
-            
+             
         }
 
         public void ShowDialog(string dialogPath)
         {
-            ResourcesManager.Instance.LoadAndInstantiate(dialogPath,DialogTransform);
+            ResourcesManager.Instance.LoadAndInstantiate(dialogPath,DialogTransform); // TODO 写Dialog的基类
+        }
+
+        public void ShowText(string text)
+        {
+            var obj=ResourcesManager.Instance.LoadAndInstantiate("Prefabs/NormalDialogs/NormalTextDialog",DialogTransform);
+            var dialog = obj.GetComponent<NormalTextDialog>();
+            dialog.ShowDialog(text);
         }
     }
 }

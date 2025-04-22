@@ -45,29 +45,19 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\2022.3.60f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Core\Plant\SoilEntity.cs" />
     <Compile Include="Assets\Manager\MySceneManager.cs" />
     <Compile Include="Assets\ResourceManger\ConfigManager.cs" />
     <Compile Include="Assets\ResourceManger\ResourcesManager.cs" />
     <Compile Include="Assets\Manager\CameraManager.cs" />
-    <Compile Include="Assets\Core\Base\Entity.cs" />
     <Compile Include="Assets\Manager\EffectManager.cs" />
     <Compile Include="Assets\NormalTools\ListTool.cs" />
-    <Compile Include="Assets\Core\Base\CharacterView.cs" />
-    <Compile Include="Assets\Core\Plant\PlantContext.cs" />
     <Compile Include="Assets\NormalTools\ExtendMethod.cs" />
     <Compile Include="Assets\Manager\DialogManager.cs" />
-    <Compile Include="Assets\Core\Base\CharacterEntity.cs" />
-    <Compile Include="Assets\Core\Plant\PlantView.cs" />
     <Compile Include="Assets\NormalTools\NormalTextDialog.cs" />
     <Compile Include="Assets\NormalTools\TouchHelper.cs" />
     <Compile Include="Assets\ResourceManger\AudioManager.cs" />
     <Compile Include="Assets\Manager\ApplicationManager.cs" />
     <Compile Include="Assets\NormalTools\MMSingleton.cs" />
-    <Compile Include="Assets\Core\Base\View.cs" />
-    <Compile Include="Assets\Core\EntityManager.cs" />
-    <Compile Include="Assets\Core\Plant\PlantEntity.cs" />
-    <Compile Include="Assets\Core\Plant\SoilView.cs" />
     <Compile Include="Assets\Manager\SpawningPoolScript.cs" />
     <Compile Include="Assets\Core\WorldContext.cs" />
     <Compile Include="Assets\NormalTools\Singleton.cs" />
@@ -75,7 +65,6 @@
     <Compile Include="Assets\Core\WorldSimulator.cs" />
     <Compile Include="Assets\Manager\GameObjectPool.cs" />
     <Compile Include="Assets\NormalTools\EventManager.cs" />
-    <Compile Include="Assets\Core\Base\ManagerBase.cs" />
     <Compile Include="Assets\Core\GameWorld.cs" />
     <Compile Include="Assets\NormalTools\ClickableBase.cs" />
     <Compile Include="Assets\NormalTools\GlobalTimer.cs" />

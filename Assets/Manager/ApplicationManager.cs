@@ -11,6 +11,7 @@ namespace Manager
         protected override void Awake()
         {
             base.Awake();
+            Debug.Log("Init");
             DontDestroyOnLoad(this);
             AppLaunch();
         }
@@ -24,8 +25,6 @@ namespace Manager
             DialogManager.Instance.Init();
             EffectManager.Instance.Init();
             touchHelper.Init(CameraManager.Instance.GetCamera(CameraType.Main),ClickObject);
-            
-            DialogManager.Instance.ShowText("test");
         }
         
         private void ClickObject(GameObject obj)

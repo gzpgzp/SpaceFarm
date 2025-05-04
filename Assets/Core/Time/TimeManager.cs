@@ -2,7 +2,7 @@ using System;
 using Tools;
 using UnityEngine;
 
-namespace Core.Manager
+namespace Core.Time
 {
     public class TimeDefine
     {

@@ -1,9 +1,8 @@
-using Core.Manager;
 using Tools;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Core.Sky
+namespace Core.Time
 {
     public class SkyController : MonoBehaviour,MMEventListener<TimeChangeEvent>
     {
@@ -15,6 +14,11 @@ namespace Core.Sky
         private void OnEnable()
         {
             this.MMEventStartListening<TimeChangeEvent>();
+        }
+
+        private void OnDisable()
+        {
+            this.MMEventStopListening<TimeChangeEvent>();
         }
 
         public void OnMMEvent(TimeChangeEvent eventType)

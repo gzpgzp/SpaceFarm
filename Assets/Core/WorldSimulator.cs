@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Core.Manager;
 using Core.Plant;
 using UnityEngine;
 
@@ -10,20 +11,29 @@ namespace Core
     {
         private WorldContext worldContext;
         private PlantManager plantManager;
+        private TimeManager timeManager;
         
         public void InitWorld(WorldContext context)
         {
             Debug.Log("Initializing World");
             worldContext = context;
             plantManager = new PlantManager();
-            plantManager.Init();
+            timeManager = new TimeManager();
+            InitManager();
         }
-        
+
+        private void InitManager()
+        {
+            plantManager.Init(worldContext);
+            timeManager.Init(worldContext);
+        }
+
         // 每秒更新一次
         public void Update()
         {
             worldContext.time += 1;
-            plantManager.Update(worldContext.time);
+            plantManager.Update();
+            timeManager.Update();
         }
 
         public int GetNowTime()

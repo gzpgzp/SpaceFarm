@@ -6,6 +6,7 @@ namespace Core
 {
     public class WorldContext
     {
+        public int day;
         public int time;
     }
 }

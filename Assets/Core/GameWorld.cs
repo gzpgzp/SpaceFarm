@@ -16,7 +16,11 @@ namespace Core
         {
             worldSimulator =  new WorldSimulator();
         
-            var worldContext = new WorldContext();
+            var worldContext = new WorldContext()
+            {
+                day = 1,
+                time = 0,
+            };
             worldSimulator.InitWorld(worldContext);
             
             StartGameWorld();

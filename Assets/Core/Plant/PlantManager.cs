@@ -10,10 +10,11 @@ namespace Core.Plant
         private List<PlantEntity> plantEntities = new List<PlantEntity>();
         private List<Seed> seeds = new List<Seed>();
         private Seed currentSeed = new Seed();
-        private int currTime = 0;
+        private WorldContext worldContext;
 
-        public void Init()
+        public void Init(WorldContext worldContext)
         {
+            this.worldContext = worldContext;
             this.MMEventStartListening<SoilClickEvent>();
         }
 
@@ -35,12 +36,11 @@ namespace Core.Plant
             }
         }
 
-        public void Update(int now)
+        public void Update()
         {
-            currTime = now;
             foreach (PlantEntity plantEntity in plantEntities)
             {
-                plantEntity.Update(now);
+                plantEntity.Update(worldContext.time);
             }
         }
 
@@ -56,7 +56,7 @@ namespace Core.Plant
             var plantContext = new PlantContext()
             {
                 seed = currentSeed,
-                startTime = currTime,
+                startTime = worldContext.time,
                 isHarvested = false,
             };
             var plantEntity = new PlantEntity(plantContext);

@@ -1,20 +1,48 @@
 using System;
+using Core.NPC;
 using UnityEngine;
 
 namespace Core.Character
 {
+    public enum CharacterType
+    {
+        None,
+        Player,
+        Npc,
+    }
+
     public class CharacterController : MonoBehaviour
     {
         [SerializeField] private CharacterView view;
         [SerializeField] private Rigidbody2D rb;
+        [SerializeField] private CharacterType characterType;
         
         [Header("角色移动")]
         [SerializeField] private float moveSpeed = 3.5f;
         [SerializeField] private float sprintMultiplier = 1.5f;
-
+        
+        private CharacterInput input;
+        
         private Vector2 moveDir;
         private bool isSprinting = false;
         private bool isMoving => moveDir.sqrMagnitude > 0.01;
+
+        private void Awake()
+        {
+            Init(characterType);
+        }
+
+        public void Init(CharacterType characterType)
+        {
+            if (CharacterType.Player == characterType)
+            {
+                input = new PlayerInput();
+            }
+            else
+            {
+                input = new NPCInput();
+            }
+        }
 
         private void Update()
         {
@@ -29,10 +57,7 @@ namespace Core.Character
 
         private void HandleInput()
         {
-            float h = Input.GetAxis("Horizontal");
-            float v = Input.GetAxis("Vertical");
-            
-            Vector2 inputDir = new Vector2(h, v);
+            Vector2 inputDir = input.GetMovementInput();
             if (inputDir.magnitude > 0.1f)
             {
                 inputDir.Normalize();    

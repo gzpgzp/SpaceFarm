@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 9145685474245166188}
   - component: {fileID: 5306937885576641437}
   - component: {fileID: 2606066194929245608}
-  - component: {fileID: 7532773304829579446}
+  - component: {fileID: 9089121449654259719}
   m_Layer: 0
-  m_Name: Plant
+  m_Name: Plant_Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -106,7 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7532773304829579446
+--- !u!114 &9089121449654259719
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -115,6 +115,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 590263582973909849}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9a381624c5948c4095f0e6b16c49efc, type: 3}
+  m_Script: {fileID: 11500000, guid: 9381a932c81142898904d354bcf48367, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

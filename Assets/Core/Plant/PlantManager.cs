@@ -11,7 +11,17 @@ namespace Core.Plant
         private List<Seed> seeds = new List<Seed>();
         private Seed currentSeed = new Seed();
         private int currTime = 0;
-        
+
+        public void Init()
+        {
+            this.MMEventStartListening<SoilClickEvent>();
+        }
+
+        public void Stop()
+        {
+            this.MMEventStopListening<SoilClickEvent>();
+        }
+
         public void OnMMEvent(SoilClickEvent e)
         {
             Debug.Log("On MM Event");
@@ -40,7 +50,7 @@ namespace Core.Plant
             {
                 growthCostTime = 10,
                 id = 1,
-                name = "Plant",
+                name = "Cube",
             };//TODO 删除
             
             var plantContext = new PlantContext()
@@ -55,6 +65,8 @@ namespace Core.Plant
             plantEntity.BindView(plant);
             
             soil.Planting(plant);
+            
+            plantEntities.Add(plantEntity);
         }
     }
 }

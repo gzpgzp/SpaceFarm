@@ -16,6 +16,7 @@ namespace Core
             Debug.Log("Initializing World");
             worldContext = context;
             plantManager = new PlantManager();
+            plantManager.Init();
         }
         
         // 每秒更新一次

@@ -5,7 +5,6 @@ namespace Core.Plant
         private PlantContext context;
         private Plant plantView;
         
-        
         public PlantEntity(PlantContext context)
         {
             this.context = context;
@@ -28,6 +27,7 @@ namespace Core.Plant
             if (!context.isHarvested && now >= context.harvestTime)
             {
                 context.isHarvested = true;
+                plantView.OnHarvested();
             }
         }
     }

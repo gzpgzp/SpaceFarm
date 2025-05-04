@@ -55,5 +55,10 @@ namespace Core.Character
                 rb.velocity = Vector2.zero;
             }
         }
+
+        public void OnUseHandItem()
+        {
+            
+        }
     }
 }

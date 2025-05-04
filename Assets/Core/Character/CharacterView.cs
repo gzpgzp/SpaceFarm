@@ -5,7 +5,6 @@ namespace Core.Character
     public class CharacterView : MonoBehaviour
     {
         [SerializeField] private Animator animator;
-        
 
         public void UpdateAnimation(Vector2 moveDir, bool isMoving,bool isSprinting)
         {

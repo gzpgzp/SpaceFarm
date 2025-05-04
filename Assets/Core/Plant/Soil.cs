@@ -31,6 +31,7 @@ namespace Core.Plant
         
         public void OnClick()
         {
+            Debug.Log("Soil.onclick");
             SoilClickEvent.Trigger(this,isPlanted);
         }
 
@@ -38,6 +39,7 @@ namespace Core.Plant
         {
             isPlanted = true;
             plant.transform.SetParent(transform);
+            plant.transform.localPosition = Vector3.zero;
         }
     }
 }

@@ -9,7 +9,7 @@ namespace Core.Character
     {
         [SerializeField] private CharacterView characterView;
         private PredictSlot predictSlot;
-        private float cellSize = 1.0f;
+        private readonly float cellSize = 1.0f; // 整体cell的尺寸
 
         public void Start()
         {
@@ -20,12 +20,13 @@ namespace Core.Character
         public void Update()
         {
             Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            
             int cursorX = Mathf.FloorToInt(cursorPos.x);
             int cursorY = Mathf.FloorToInt(cursorPos.y);
-            
-            var dis = CalculateDis(cursorX,cursorY);
-            
-            predictSlot.SetPos(cursorX, cursorY,dis);
+
+            var dis = CalculateDis(cursorX, cursorY);
+
+            predictSlot.SetPos(cursorX, cursorY, dis);
         }
 
         public void Init(CharacterView characterView)
@@ -35,10 +36,13 @@ namespace Core.Character
 
         private float CalculateDis(int cursorX, int cursorY)
         {
-            var characterPos = characterView.transform.position;
+            var characterPos = characterView.GetCharacterViewPos();
+            Debug.Log($"character pos is {characterPos},cursor x is {cursorX}, cursor y is {cursorY}");
+            
             var xDis = characterPos.x - cursorX;
             var yDis = characterPos.y - cursorY;
-            var dis = Mathf.Sqrt(xDis*xDis+yDis*yDis);
+            var dis = Mathf.Sqrt(xDis * xDis + yDis * yDis);
+            
             return dis;
         }
     }

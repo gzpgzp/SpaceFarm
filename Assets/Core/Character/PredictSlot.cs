@@ -7,7 +7,6 @@ namespace Core.Character
     {
         [SerializeField] private SpriteRenderer spriteRenderer;
         private Vector3 tempVect = Vector3.one;
-        private bool isWorking = false;
 
         private const float WorkingDis = 2.0f;
 
@@ -17,14 +16,7 @@ namespace Core.Character
             tempVect.y = y + 0.5f;
             transform.position = tempVect;
 
-            if (!isWorking && dis < WorkingDis)
-            {
-                spriteRenderer.color = Color.green;
-            }
-            else
-            {
-                spriteRenderer.color = Color.red;
-            }
+            spriteRenderer.color = dis < WorkingDis ? Color.green : Color.red;
         }
     }
 }

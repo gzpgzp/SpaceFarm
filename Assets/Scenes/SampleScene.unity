@@ -1681,6 +1681,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Character
       objectReference: {fileID: 0}
+    - target: {fileID: 7384197932262120397, guid: 742d692b3e8a78740a7d27599da86eee, type: 3}
+      propertyPath: characterViewOffset.y
+      value: -0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8042544720438003624, guid: 742d692b3e8a78740a7d27599da86eee, type: 3}
       propertyPath: characterType
       value: 1
